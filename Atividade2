@@ -1,0 +1,29 @@
+// 2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), 
+escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence
+ou não a sequência.
+
+
+#include <stdlib.h>
+#include <stdio.h>
+
+ void sequencia(int num, int fib[]){
+      
+      fib[0] = 0;
+      fib[1] = 1;
+      
+      for(int i = 2; i < num; i++ ){
+       
+        fib[i] = fib[i-1] + fib[i-2];
+        printf("%d", fib[i]);
+    }
+}
+int main()
+{
+   int num;
+   int fib[100];
+   
+   printf("Informe um número inteiro: ");
+   scanf("%d", &num);
+   
+   sequencia(num, fib);    
+}
